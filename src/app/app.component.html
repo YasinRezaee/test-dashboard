@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <div class="d-flex align-items-center">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="me-3"> Project Name</span>
+     </div>
+  <div class="d-flex">
+    <button  mat-icon-button><mat-icon>login</mat-icon></button>
+    <button  mat-icon-button><mat-icon>person_add</mat-icon></button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened #sidenav>
+    <mat-nav-list appNavListKeyManager>
+      @for (item of navItems; track item) {
+      <a
+        mat-list-item
+        appListItemFocusable
+        [routerLink]="[item.route]"
+        routerLinkActive
+        [routerLinkActiveOptions]="{ exact: true }"
+        #rla="routerLinkActive"
+        [activated]="rla.isActive"
+      >
+        <span matListItemTitle>{{ item.title }}</span>
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+      </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
+
+ 

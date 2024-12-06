@@ -1,0 +1,16 @@
+:host {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+  }
+  
+  mat-sidenav {
+    width: 280px;
+  }
+  
+  mat-sidenav-content {
+    padding: 1.5rem;
+  }
+.mat-toolbar-single-row{
+  justify-content: space-between !important;
+}

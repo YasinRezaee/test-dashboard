@@ -1,0 +1,17 @@
+<div class="card-container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+    <mat-card *ngFor="let flower of flowersList" class="card" [style.width.px]="300">
+      <img mat-card-image [src]="flower.src" alt="{{ flower.name }}">
+      <mat-card-content>
+        <h2>{{ flower.name }}</h2>
+        <p>{{ flower.exp }}</p>
+      </mat-card-content>
+      <mat-card-actions style="justify-content: space-between">
+        <button mat-button>View Details</button>
+        <div style="display: flex;">
+            <button mat-button><mat-icon class="text-primary">edit</mat-icon></button>
+            <button mat-button><mat-icon class="text-danger">delete</mat-icon></button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

@@ -1,0 +1,18 @@
+<mat-card class="example-card" appearance="outlined" class="card">
+    <mat-card-header>
+      <mat-card-title>Typing Challenge...</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="mt-5">
+      <h2 [ngClass]="compare(randomString , inputText)" class="text-center" >{{randomString}}</h2>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput  placeholder="Type here" (input)="onChangeInput($event.target.value)">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-footer class="example-card-footer">
+      <mat-chip-set aria-label="Chihuahua traits" class="align-content-center">
+        <button *ngIf="randomString === inputText" class="btn btn-primary w-50 m-auto"> Success! </button>
+      </mat-chip-set>
+    </mat-card-footer>
+  </mat-card>
